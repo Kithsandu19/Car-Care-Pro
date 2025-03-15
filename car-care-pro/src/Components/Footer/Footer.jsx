@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { Box, Grid, Typography, Link, Divider } from '@mui/material';
-import footerLogo from '../Images/Landora.png'; // Adjust the path according to your project structure
+import footerLogo from '../Images/ccp.png'; // Adjust the path according to your project structure
 import colors from '../colors'; // Adjust the path according to your project structure
 
 function Footer() {
@@ -92,7 +92,7 @@ function Footer() {
       {/* Copyright */}
       <Box textAlign="center">
         <Typography variant="body2" sx={{ opacity: 0.7 }}>
-          © {new Date().getFullYear()} Landora. All rights reserved.
+          © {new Date().getFullYear()} Car Care Pro. All rights reserved.
         </Typography>
       </Box>
     </Box>

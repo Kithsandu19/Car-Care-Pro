@@ -32,7 +32,7 @@ const colors = {
 
     //Home Page
     //homebg: 'linear-gradient(to left,rgb(255, 255, 255), #ff932f)',
-    homebg: 'rgb(0, 0, 0)',
+    homebg: 'rgb(101, 181, 44)',
     hometext1: 'rgb(255, 123, 0)',
     hometext2: 'rgb(0, 0, 0)',
     homebutton: ' #ff932f',
@@ -42,7 +42,7 @@ const colors = {
     //Login Page
   //loginbg: 'linear-gradient(to left,rgb(255, 255, 255), #ff932f)',
     loginbg: 'rgb(255, 255, 255)',
-    logincard: ' #ff932f',
+    logincard: 'rgb(242, 97, 25)',
     logintext1: ' #000000',
     logintext2: 'rgb(0, 0, 0)',
     loginicon: ' #ff932f',

@@ -65,8 +65,8 @@ const EFpage = () => {
     <Container maxWidth="md" sx={{ mt: 4, display: "flex", flexDirection: "column", alignItems: "center" }}>
       <Card sx={{ width: "100%", maxWidth: "900px", p: 2, borderRadius: 3, boxShadow: 5, bgcolor: "rgb(206, 206, 206)" }}>
         <CardContent>
-          <Typography variant="h4" sx={{ textAlign: "center", fontWeight: "bold", color: "#ffc400" }}>
-            LANDORA
+          <Typography variant="h4" sx={{ textAlign: "center", fontWeight: "bold", color: "rgb(44, 226, 62)" }}>
+            Car Care Pro 
           </Typography>
           <Typography variant="h6" sx={{ textAlign: "center", color: "gray", mb: 2 }}>
             Your Virtual Assistant
@@ -92,7 +92,7 @@ const EFpage = () => {
                     maxWidth: "80%",
                   }}
                 >
-                  <strong>{msg.role === "user" ? "You" : "LANDORA"}:</strong>{" "}
+                  <strong>{msg.role === "user" ? "You" : "Car Care Pro"}:</strong>{" "}
                   <ReactMarkdown>{msg.content}</ReactMarkdown>
                 </Typography>
               </motion.div>

@@ -44,6 +44,11 @@ import PropertyDetails from './Components/Admin/PropertyManagement/PropertyDetai
 //Extra Features
 import EFpage from './Components/ExtraFeature/EFpage';
 
+//cart page
+import Cart from './Components/Home/cart';
+
+import Appointment from './Components/Home/Appointment';
+
 function App() {
   return (
     <AuthProvider>  {/* Wrap the entire app with AuthProvider */}
@@ -51,6 +56,8 @@ function App() {
         <Routes>
           {/* Home Page as the default route */}
           <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/appointment" element={<Appointment />} />
 
           {/* Login Page */}
           <Route path="/login" element={<Login />} />
