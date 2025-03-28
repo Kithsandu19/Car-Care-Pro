@@ -21,13 +21,13 @@ const colors = {
     background4: 'linear-gradient(to left,rgb(255, 0, 0), #ff932f)',
 
     //Navbar
-    navicon: ' #ff932f',
+    navicon: ' #ffc400',
     navleft: 'rgb(0, 0, 0)',
-    navright: 'rgb(98, 245, 49)',
-    navbg: 'rgb(255, 255, 255)',
+    navright: ' #55abb9',
+    navbg: ' #ffffff',
     
     //Footer
-    footerbg: 'rgb(255, 255, 255)',
+    footerbg: '#fbfaf3',
     footertext: 'rgb(0, 0, 0)', 
 
     //Home Page
@@ -41,23 +41,24 @@ const colors = {
 
     //Login Page
   //loginbg: 'linear-gradient(to left,rgb(255, 255, 255), #ff932f)',
-    loginbg: 'rgb(255, 255, 255)',
-    logincard: 'rgb(242, 97, 25)',
+    loginbg: 'linear-gradient(to bottom,rgb(0, 0, 0),rgb(80, 80, 80))',
+    logincard: '#8a8a8a',
+    loginscard: 'rgb(242, 97, 25)',
     logintext1: ' #000000',
     logintext2: 'rgb(0, 0, 0)',
-    loginicon: ' #ff932f',
-    loginbutton: 'rgb(255, 255, 255)',
+    loginicon: ' #ffc400',
+    loginbutton: ' #55abb9',
     logintextarea: 'hsl(0, 0.00%, 100.00%)',
     border: 'rgb(0, 0, 0)',
     placeholder: 'rgb(0, 0, 0)',
 
     //Signup Page
     //signupbg: 'linear-gradient(to left,rgb(255, 255, 255), #ff932f)',
-    signupbg: 'rgb(255, 255, 255)',
-    signupcard: ' #ff932f',
+    signupbg: 'linear-gradient(to bottom,rgb(0, 0, 0),rgb(80, 80, 80))',
+    signupcard: ' #8a8a8a',
     signuptext1: ' #000000',
     signuptext2: 'rgb(0, 0, 0)',
-    signupicon: ' #ff932f',
+    signupicon: ' rgb(101, 181, 44)',
     signupbutton: 'rgb(255, 255, 255)',
     signuptextarea: 'rgb(255, 255, 255)',
     signupborder: 'rgb(0, 0, 0)',

@@ -279,8 +279,6 @@ export default class Dashboard extends Component {
             </Card>
           </Grid>
 
-
-
           {/* buildings */}
           <Grid item xs={12} sm={6} md={4}>
             <Card
@@ -464,7 +462,6 @@ export default class Dashboard extends Component {
             </Card>
           </Grid>
 
-
           {/* Maintainance Partners */}
           <Grid item xs={12} sm={6} md={4}>
             <Card
@@ -526,7 +523,6 @@ export default class Dashboard extends Component {
             </Card>
           </Grid>
 
-
           {/* Property Owners */}
           <Grid item xs={12} sm={6} md={4}>
             <Card
@@ -587,10 +583,6 @@ export default class Dashboard extends Component {
               </CardContent>
             </Card>
           </Grid>
-
-
-
-
 
           {/* Sales */}
           <Grid item xs={12} sm={6} md={4}>

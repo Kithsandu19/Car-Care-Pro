@@ -14,10 +14,11 @@ const sidebarBackground = 'url(https://wallpapers.com/images/hd/blank-white-vert
 
 const menuItems = [
   { text: 'Dashboard', icon: faTachometerAlt, path: '/admindashboard/dashboard' },
-  { text: 'User Management', icon: faUsers, path: '/admindashboard/user-management' },
-  { text: 'Property Management', icon: faBuilding, path: '/property-management/list' },
-  { text: 'Sales Management', icon: faSackDollar, path: '/sales-management/SalesList' },
-  { text: 'Maintenance Management', icon: faHammer, path: '/maintanance-management/Requests' },
+  { text: 'Customer Management', icon: faUsers, path: '/admindashboard/customer-management' },
+  { text: 'Vehicle Management', icon: faHammer, path: 'vehicle-management/' },
+  { text: 'Employee Work Management', icon: faBuilding, path: 'employee-management/' },
+  { text: 'Services Booking Management', icon: faSackDollar, path: 'services-management/' },
+  { text: 'Spare parts Management', icon: faHammer, path: 'inventory-management/' },
 ];
 
 function AdminDashboard() {
@@ -71,15 +72,15 @@ function AdminDashboard() {
         <List>
           {menuItems.map((item, index) => (
             <ListItemButton key={index} onClick={() => handleMenuClick(item.path)}>
-              <ListItemIcon sx={{ color: '#ff932f' }}>
+              <ListItemIcon sx={{ color: ' #ff932f' }}>
                 <FontAwesomeIcon icon={item.icon} />
               </ListItemIcon>
               <ListItemText primary={item.text} sx={{ color: 'black' }} />
             </ListItemButton>
           ))}
         </List>
-        <Button variant="contained" sx={{ m: 2, bgcolor:" #ffc400", color:" #000000" }} onClick={toggleView}>
-          {showEFPage ? 'Show Dashboard' : 'LANDORA'}
+        <Button variant="contained" sx={{ m: 2, bgcolor:" #55abb9", color:" #000000" }} onClick={toggleView}>
+          {showEFPage ? 'Show Dashboard' : 'AI ASSISTANT'}
         </Button>
       </Drawer>
 

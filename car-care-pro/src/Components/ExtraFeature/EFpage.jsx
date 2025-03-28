@@ -1,11 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Container, TextField, Button, Card, CardContent, Typography, Box, CircularProgress, IconButton } from "@mui/material";
-import { Mic, MicOff } from "@mui/icons-material";
+import { Mic, MicOff, ArrowBack } from "@mui/icons-material";
 import { motion } from "framer-motion";
 import axios from "axios";
 import ReactMarkdown from "react-markdown";
 
 const EFpage = () => {
+  const navigate = useNavigate();
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -14,23 +16,7 @@ const EFpage = () => {
   const recognitionRef = useRef(null);
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-
-    // Initialize Speech Recognition
-    if ("SpeechRecognition" in window || "webkitSpeechRecognition" in window) {
-      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-      recognitionRef.current = new SpeechRecognition();
-      recognitionRef.current.continuous = false;
-      recognitionRef.current.interimResults = false;
-      recognitionRef.current.lang = "en-US";
-
-      recognitionRef.current.onstart = () => setListening(true);
-      recognitionRef.current.onend = () => setListening(false);
-      recognitionRef.current.onresult = (event) => {
-        const transcript = event.results[0][0].transcript;
-        setInput(transcript);
-      };
-    }
+    setTimeout(() => messagesEndRef.current?.scrollIntoView({ behavior: "smooth" }), 100);
   }, [messages]);
 
   const startListening = () => {
@@ -62,33 +48,24 @@ const EFpage = () => {
   };
 
   return (
-    <Container maxWidth="md" sx={{ mt: 4, display: "flex", flexDirection: "column", alignItems: "center" }}>
-      <Card sx={{ width: "100%", maxWidth: "900px", p: 2, borderRadius: 3, boxShadow: 5, bgcolor: "rgb(206, 206, 206)" }}>
+    <Container maxWidth="md" sx={{ mt: 4, display: "flex", flexDirection: "column", height: "90vh" }}>
+      <Card sx={{ flex: 1, width: "100%", maxWidth: "900px", p: 2, borderRadius: 3, boxShadow: 5, bgcolor: "rgb(206, 206, 206)" }}>
         <CardContent>
           <Typography variant="h4" sx={{ textAlign: "center", fontWeight: "bold", color: "rgb(44, 226, 62)" }}>
-            Car Care Pro 
+            Car Care Pro
           </Typography>
           <Typography variant="h6" sx={{ textAlign: "center", color: "gray", mb: 2 }}>
             Your Virtual Assistant
           </Typography>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              gap: 1,
-              maxHeight: 400,
-              overflowY: "auto",
-              p: 1,
-            }}
-          >
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 1, maxHeight: 400, overflowY: "auto", p: 1 }}>
             {messages.map((msg, index) => (
               <motion.div key={index} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
                 <Typography
                   sx={{
                     p: 1.5,
                     borderRadius: 2,
-                    bgcolor: msg.role === "user" ? "#ffc400" : "rgb(255, 255, 255)",
-                    color: msg.role === "user" ? "#000000" : "#000000",
+                    bgcolor: msg.role === "user" ? "#55abb9" : "rgb(255, 255, 255)",
+                    color: "#000000",
                     maxWidth: "80%",
                   }}
                 >
@@ -99,13 +76,14 @@ const EFpage = () => {
             ))}
             {loading && (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}>
-                <Typography sx={{ color: "gray", alignSelf: "flex-start" }}>🤖 LANDORA is typing...</Typography>
+                <Typography sx={{ color: "gray", alignSelf: "flex-start" }}>🤖 Car Care is typing...</Typography>
               </motion.div>
             )}
             <div ref={messagesEndRef} />
           </Box>
         </CardContent>
       </Card>
+
       <Box sx={{ display: "flex", width: "100%", maxWidth: 600, mt: 2, alignItems: "center" }}>
         <TextField
           fullWidth
@@ -116,11 +94,23 @@ const EFpage = () => {
           onKeyDown={(e) => e.key === "Enter" && sendMessage()}
           disabled={loading}
         />
-        <IconButton sx={{ ml: 1, bgcolor: listening ? "red" : "#ffc400", color: "#000000" }} onClick={startListening}>
+        <IconButton sx={{ ml: 1, bgcolor: listening ? "red" : "#55abb9", color: "#000000" }} onClick={startListening}>
           {listening ? <MicOff /> : <Mic />}
         </IconButton>
-        <Button variant="contained" sx={{ ml: 1, bgcolor: "#ffc400", color: "#000000" }} onClick={sendMessage} disabled={loading}>
+        <Button variant="contained" sx={{ ml: 1, bgcolor: "#55abb9", color: "#000000" }} onClick={sendMessage} disabled={loading}>
           {loading ? <CircularProgress size={24} color="inherit" /> : "Send"}
+        </Button>
+      </Box>
+
+      {/* Back to Home Button at Bottom */}
+      <Box sx={{ display: "flex", justifyContent: "flex-end", width: "100%", mt: "auto", pb: 2 }}>
+        <Button
+          startIcon={<ArrowBack />}
+          sx={{ bgcolor: " #55abb9", color: "#000000" }}
+          onClick={() => navigate("/")}
+          variant="contained"
+        >
+          Back to Home
         </Button>
       </Box>
     </Container>

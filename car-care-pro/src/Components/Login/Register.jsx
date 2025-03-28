@@ -24,7 +24,7 @@ import LockIcon from '@mui/icons-material/Lock';
 import PersonIcon from '@mui/icons-material/Person';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
-import Logo from '../Images/landora.png';
+import Logo from '../Images/ccp.png';
 import colors from '../colors';
 
 function Register() {
@@ -94,7 +94,7 @@ function Register() {
                 <Paper elevation={10} sx={{
                     padding: 5,
                     borderRadius: 3,
-                    maxWidth: 900,
+                    maxWidth: 700,
                     background: colors.signupcard,
                     backdropFilter: 'blur(10px)',
                     boxShadow: 5

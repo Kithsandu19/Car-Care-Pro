@@ -25,16 +25,37 @@ function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const { name, password } = user;
+    
+        // Hardcoded credentials and navigation logic
+        if (name === "hiruna" && password === "123") {
+            navigate("/admindashboard/services-management/");
+            return;
+        }
+        if (name === "venuja" && password === "123") {
+            navigate("/admindashboard/employee-management/");
+            return;
+        }
+        if (name === "chamara" && password === "123") {
+            navigate("/admindashboard/vehicle-management/");
+            return;
+        }
+        if (name === "budwin" && password === "123") {
+            navigate("/admindashboard/inventory-management/");
+            return;
+        }
+    
+        // Default login logic for other users
         try {
-            const response = await axios.post("https://xjnwl62k-4000.asse.devtunnels.ms/auth/login", user);
+            const response = await axios.post("http://localhost:4000/auth/login", user);
             if (response.status === 200) {
                 const { token, user: loggedInUser } = response.data;
                 login(token, loggedInUser);
-                alert(`${loggedInUser.type === "admin" ? "Admin" : "User"} Login Successful`);
-                navigate(loggedInUser.type === "admin" ? "/admindashboard/dashboard" : "/userprofile");
+                alert(`${loggedInUser.type === "admin" ? "Admin" : "User"} logged in successfully!`);
+                navigate("/dashboard");
             }
-        } catch (err) {
-            alert(err.response?.data?.message || "Login failed");
+        } catch (error) {
+            alert("Login failed. Please check your credentials.");
         }
     };
 

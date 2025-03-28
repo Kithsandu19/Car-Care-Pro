@@ -21,25 +21,10 @@ import UpdateUser from './Components/Admin/UserManagement/UpdateUser';
 
 import { AuthProvider } from './Components/Auth/AuthContext';  // Import AuthProvider
 import MakePayment from './Components/pages/MakePayment';
-
-//Sales Components
-import SalesDashboard from './Components/Admin/SalesManagement/SalesList';
-import FinancialTransactions from './Components/Admin/SalesManagement/FinancialTransactions';
-import PaymentsAndReceipts from './Components/Admin/SalesManagement/PaymentsAndReceipts';
-import TransactionStatus from './Components/Admin/SalesManagement/TransactionStatus';
-import ContractsAndAgreements from './Components/Admin/SalesManagement/ContractsAndAgreements';
-import Sales from './Components/Admin/SalesManagement/SalesView';
-
-//Maintenance Components
-import MaintenanceList from './Components/Admin/MaintananceManagement/MaintananceList';
-import Requests from './Components/Admin/MaintananceManagement/Requests';
-import VendorManagement from './Components/Admin/MaintananceManagement/Vendor';
-import Cost from './Components/Admin/MaintananceManagement/Cost';
-import Schedules from './Components/Admin/MaintananceManagement/Schedules';
-
-//Property Components
-import PropertyList from './Components/Admin/PropertyManagement/PropertyList';
-import PropertyDetails from './Components/Admin/PropertyManagement/PropertyDetails';
+import Employee from './Components/Admin/EmployeeWork/Employees';
+import Services from './Components/Admin/Service Booking/Services';
+import Vehicles from './Components/Admin/Vehicle-management/Vehicles';
+import SpareParts from './Components/Admin/SparepartsInventory/SpareParts';
 
 //Extra Features
 import EFpage from './Components/ExtraFeature/EFpage';
@@ -78,38 +63,21 @@ function App() {
           <Route path="/makepayment/:id" element={<MakePayment />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
           <Route path="/termsofuse" element={<TermsOfUse />} />
-          
-          <Route path="/sales-management" element={<SalesDashboard />} >
-            <Route path="SalesList" element={<Sales />} />
-            <Route path="FinancialTransactions" element={<FinancialTransactions />} />
-            <Route path="PaymentsAndReceipts" element={<PaymentsAndReceipts />} />
-            <Route path="TransactionStatus" element={<TransactionStatus />} />
-            <Route path="ContractsAndAgreements" element={<ContractsAndAgreements />} />    
-          </Route>
-
-          <Route path="/maintanance-management" element={<MaintenanceList />} >
-            <Route path="Requests" element={<Requests />} />
-            <Route path="Vendor" element={<VendorManagement />} />
-            <Route path="Costs" element={<Cost />} />
-            <Route path="Schedules" element={<Schedules />} />
-          </Route>
-
-          <Route path="/property-management" element={<PropertyList />} >
-            <Route path="list" element={<PropertyDetails />} />
-            <Route path="Vendor" element={<VendorManagement />} />
-            <Route path="Costs" element={<Cost />} />
-            <Route path="Schedules" element={<Schedules />} />
-          </Route>
-
 
           {/* Admin Dashboard Routes */}
           <Route path="/admindashboard" element={<AdminDashboard />}>
-            <Route path="dashboard" element={<Dashboard />} />
+            {/* <Route path="dashboard" element={<Dashboard />} /> */}
             {/* User Management */}
 
-            <Route path="user-management" element={<UserDetails />} />
+            <Route path="customer-management" element={<UserDetails />} />
             <Route path="adduser" element={<AddUser />} />
             <Route path="update-user/:id" element={<UpdateUser />} />
+
+            <Route path="employee-management" element={<Employee />} />
+            <Route path="services-management" element={<Services />} />
+            <Route path="vehicle-management" element={<Vehicles />} />
+            <Route path="inventory-management" element={<SpareParts />} />
+
 
           </Route>
 
