@@ -66,7 +66,7 @@ function App() {
 
           {/* Admin Dashboard Routes */}
           <Route path="/admindashboard" element={<AdminDashboard />}>
-            {/* <Route path="dashboard" element={<Dashboard />} /> */}
+            {<Route path="dashboard" element={<Dashboard />} /> }
             {/* User Management */}
 
             <Route path="customer-management" element={<UserDetails />} />
